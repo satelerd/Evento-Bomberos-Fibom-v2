@@ -6,10 +6,12 @@ function Test() {
         <div className="App">
             <header className="App-header">
                 {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                <h1>This is a TESTTTT</h1>
-                <p>
-                    Edit <code>src/App.js</code> and save to reloa
-                </p>
+                <h1>Eh, tu! ¿Qué haces aquí?</h1>
+                <h2>¿Qué haces aquí?</h2>
+                <h3>¿Qué haces aquí?</h3>
+                <h4>¿Qué haces aquí?</h4>
+                <h5>¿Qué haces aquí?</h5>
+                <h6>Creado por Daniel Sateler y Sebastian Diaz</h6>
                 <a
                     className="App-link"
                     href="https://reactjs.org"

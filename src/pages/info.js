@@ -1,23 +1,88 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './info.css';
 
 function Info() {
+    // make the same but with hooks
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState();
+    const [rut, setRut] = useState();
+    const [region, setRegion] = useState();
+    const [group, setGroup] = useState();
+    const [position, setPosition] = useState();
+
+
+    const { postId } = useParams();
+    // http://localhost:3000/Sebastian_Diaz&sdiazdelafuente9@gmail.com&17.856.856-2&Región_Metropolitana,_Comuna_de_San_Joaquin&Cuerpo_de_Bomberos_de_San_Joaquin&Bombero
+    console.log(postId);
+
+    useEffect(() => {
+        // the following will take the id and create variables acording to the id
+        // first we split the id the & and take the second part
+        const info = postId.split('&');
+        // make a loop to take the info and create variables
+        for (let i = 0; i < info.length; i++) {
+            if (i === 0) {
+                for (let j = 0; j < info[i].length; j++) {
+                    if (info[i][j] === '_') {
+                        info[i] = info[i].replace('_', ' ');
+                    }
+                }
+                setName(info[i]);
+            }
+            if (i === 1) {
+                setEmail(info[i]);
+            }
+            if (i === 2) {
+                setRut(info[i]);
+            }
+            if (i === 3) {
+                for (let j = 0; j < info[i].length; j++) {
+                    if (info[i][j] === '_') {
+                        info[i] = info[i].replace('_', ' ');
+                    }
+                }
+                setRegion(info[i]);
+            }
+            if (i === 4) {
+                for (let j = 0; j < info[i].length; j++) {
+                    if (info[i][j] === '_') {
+                        info[i] = info[i].replace('_', ' ');
+                    }
+                }
+                setGroup(info[i]);
+            }
+            if (i === 5) {
+                for (let j = 0; j < info[i].length; j++) {
+                    if (info[i][j] === '_') {
+                        info[i] = info[i].replace('_', ' ');
+                    }
+                }
+                setPosition(info[i]);
+            }
+        }
+    }, [postId]);
+
     return (
         <div className="App">
             <header className="App-header">
-                {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                <h1>info</h1>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload..
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <div className='main-container'>
+                    <h1>Evento Fibom</h1>
+                    <h2>Haz sido registrado con exito ¡Ya puedes ingresar!</h2>
+                    <div className='info'>
+                        <h3>Informacion</h3>
+
+                        {/* create a list that contains all the info of the fireman */}
+                        <ul>
+                            <li>Nombre: <span>{name}</span></li>
+                            <li>Mail: <span>{email}</span></li>
+                            <li>Rut: <span>{rut}</span></li>
+                            <li>Region y comuna: <span>{region}</span></li>
+                            <li>Cuerpo de Bomberos: <span>{group}</span></li>
+                            <li>Cargo: <span>{position}</span></li>
+                        </ul>
+                    </div>
+                </div>
             </header>
         </div>
     );
