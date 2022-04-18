@@ -18,8 +18,23 @@
 
 }
 
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 100px;
+}
+
+img {
+    width: 30%;
+
+}
+
 h3 {
     margin-bottom: 0;
+    font-size: 25px;
 }
 
 .info {
@@ -29,12 +44,18 @@ h3 {
 }
 
 ul {
+    /* change the circles to nothing */
+    list-style: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
+li {
+    margin-bottom: 10px;
+}
+
 span {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
 }

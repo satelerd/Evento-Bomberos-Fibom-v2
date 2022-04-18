@@ -67,19 +67,21 @@ function Info() {
         <div className="App">
             <header className="App-header">
                 <div className='main-container'>
-                    <h1>Evento Fibom</h1>
-                    <h2>Haz sido registrado con exito ¡Ya puedes ingresar!</h2>
+                    {/* <h1>Evento</h1> */}
+                    <div className='img-container'>
+                        <img src="https://fibom.cl/wp-content/uploads/2021/11/fibom-logo-blanco.png" alt="logo" />
+                    </div>
+                    <h3>Has sido registrado con éxito ¡Ya puedes ingresar!</h3>
                     <div className='info'>
-                        <h3>Informacion</h3>
 
                         {/* create a list that contains all the info of the fireman */}
                         <ul>
-                            <li>Nombre: <span>{name}</span></li>
-                            <li>Mail: <span>{email}</span></li>
-                            <li>Rut: <span>{rut}</span></li>
-                            <li>Region y comuna: <span>{region}</span></li>
-                            <li>Cuerpo de Bomberos: <span>{group}</span></li>
-                            <li>Cargo: <span>{position}</span></li>
+                            <li><span>{name}</span></li>
+                            <li><span>{email}</span></li>
+                            <li><span>{rut}</span></li>
+                            <li><span>{region}</span></li>
+                            <li><span>{group}</span></li>
+                            <li><span>{position}</span></li>
                         </ul>
                     </div>
                 </div>
