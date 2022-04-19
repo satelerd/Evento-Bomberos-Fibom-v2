@@ -79,9 +79,6 @@ function Info() {
                             <li><span>{name}</span></li>
                             <li><span>{email}</span></li>
                             <li><span>{rut}</span></li>
-                            <li><span>{region}</span></li>
-                            <li><span>{group}</span></li>
-                            <li><span>{position}</span></li>
                         </ul>
                     </div>
                 </div>
