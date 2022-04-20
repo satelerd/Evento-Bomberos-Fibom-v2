@@ -6,6 +6,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from pprint import pprint
 import pandas as pd
+import qrcode
+
 
 ## CONNECT TO THE GOOGLE SHEET
 
@@ -51,7 +53,9 @@ def get_data():
 def use_data(sheet, data):
     # Use the data to create a dataframe
     df = pd.DataFrame(data)
+    print("Data: ")
     print(df)
+    print()
 
     # now create a loop to get the data from the dataframe
     for index, row in df.iterrows():
@@ -79,6 +83,14 @@ def use_data(sheet, data):
         sheet.update_cell(index + 2, 13, link)
 
         # now convert the link to a QR code
+        qr = qrcode.make(link)
+        name = name.replace(" ", "_")
+        qr.save(
+            "C:\\Users\\satel\\OneDrive\\code\\Fibom-4\\fibom-app\\users-data\\qr_codes_"
+            + name
+            + ".png"
+        )
+    print("QR codes created")
 
 
 ## RUNNING THE CODE
