@@ -79,6 +79,7 @@ function Info() {
                             <li><span>{name}</span></li>
                             <li><span>{email}</span></li>
                             <li><span>{rut}</span></li>
+
                         </ul>
                     </div>
                 </div>
